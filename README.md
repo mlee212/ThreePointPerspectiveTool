@@ -8,3 +8,4 @@ This personal project's purpose is to be a tool to help me understand rectangula
 4. Select one point on each line that appear between the center point and the outer points
 
 # Demo
+![ThreePointToolDemo](https://user-images.githubusercontent.com/52150558/223886862-35613d57-de29-407d-8ee5-4f1cf21a9f59.gif)
