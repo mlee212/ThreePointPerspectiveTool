@@ -29,7 +29,7 @@ int main() {
     while (window.isOpen()) {
         sf::Event event;
         sf::Mouse mouse;
-        
+
         // Debug statements
         // std::cout << mouse.getPosition(window).x << "," << mouse.getPosition(window).y << std::endl;
         // std::cout << interpoints[0].x << "," << interpoints[0].y << std::endl;
@@ -56,7 +56,13 @@ int main() {
 
         // Draw basepoints
         for(int i = 0; i < barrsize; i++) {
+            circle.setFillColor(sf::Color(100, 250, 50));
             circle.setPosition(basepoints[i].x - radius,basepoints[i].y - radius);
+            
+            if(i == barrsize - 1) {
+                circle.setFillColor(sf::Color(250, 100, 50));
+            }
+
             window.draw(circle);
         }
 
@@ -77,8 +83,10 @@ int main() {
         // Draw interpoints
         if(linesdrawn) {
             for(int i = 0; i < iarrsize; i++) {
+                circle.setFillColor(sf::Color(50, 100, 250));
                 circle.setPosition(interpoints[i].x - radius,interpoints[i].y - radius);
                 window.draw(circle);
+                
             }
         }
 
@@ -99,6 +107,7 @@ int main() {
         }
 
         // Draw Current position
+        circle.setFillColor(sf::Color(100, 250, 50));
         circle.setPosition(mouse.getPosition(window).x - radius, mouse.getPosition(window).y - radius);
         window.draw(circle);
         window.display();
